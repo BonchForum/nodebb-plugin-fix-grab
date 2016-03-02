@@ -1,0 +1,10 @@
+{
+  "description": "Enable sound notification for new user",
+  "url": "https://github.com/BonchForum/nodebb-plugin-fix-grab",
+  "library": "./library.js",
+  "hooks": [
+    {
+      "hook": "action:user.create", "method": "userCreate"
+    }
+  ]
+}
