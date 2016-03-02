@@ -14,7 +14,7 @@
         callback();
         return;
       } else {
-        window.info(result);
+        winston.info(result);
       }
 
       winston.info("[nodebb-plugin-grab-fix] Found users: " + result.users.length);
