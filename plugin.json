@@ -5,9 +5,6 @@
   "hooks": [
     {
       "hook": "action:user.create", "method": "userCreate"
-    },
-    {
-      "hook": "static:app.load", "method": "firstRun"
     }
   ]
 }
