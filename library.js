@@ -13,11 +13,7 @@
         winston.error(err);
         callback();
         return;
-      } else {
-        winston.info(result);
       }
-
-      winston.info("[nodebb-plugin-grab-fix] Found users: " + result.users.length);
 
       result.users.forEach(function(user) {
         winston.info("[nodebb-plugin-grab-fix] Fix: " + user.uid);
