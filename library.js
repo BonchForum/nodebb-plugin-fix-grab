@@ -7,8 +7,16 @@
 
   Fix.firstRun = function(params, callback) {
     winston.info("[nodebb-plugin-grab-fix] run");
-    
+
     User.getUsersFromSet('users:joindate', 1, 1, 200, function(err, result) {
+      if (err) {
+        winston.error(err);
+        callback();
+        return;
+      } else {
+        window.info(result);
+      }
+
       winston.info("[nodebb-plugin-grab-fix] Found users: " + result.users.length);
 
       result.users.forEach(function(user) {
