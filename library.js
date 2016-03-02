@@ -5,7 +5,8 @@
     winston = module.parent.require('winston'),
     User = require.main.require('./src/user');
 
-  Fix.firstRun = function() {
+  Fix.firstRun = function(params, callback) {
+    
     User.getUsersFromSet('users:joindate', 1, 0, 200, function(err, result) {
       winston.info("[nodebb-plugin-grab-fix] Found users: " + result.users.length);
 
@@ -14,6 +15,8 @@
         User.ignoreCategory(user.uid, 21, function() {});
       });
     });
+
+    callback();
   }
 
   Fix.userCreate = function(userData) {
